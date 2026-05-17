@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Send booking",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "name": "Тест Тестович",
+        "phone": "+7 (999) 000-00-00",
+        "date": "17 мая 2025 г.",
+        "time": "13:00",
+        "guests": "4",
+        "service": "Стандарт"
+      },
+      "expectedStatus": 200,
+      "expectedBody": { "ok": true },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
